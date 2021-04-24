@@ -1,0 +1,117 @@
+
+@font-face {
+  font-family: 'black_jackregular';
+  src: url('fonts/blackjack-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latobold';
+  src: url('fonts/lato-bold-webfont.woff2') format('woff2'),
+       url('fonts/lato-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latobold_italic';
+  src: url('fonts/lato-bolditalic-webfont.woff2') format('woff2'),
+       url('fonts/lato-bolditalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoitalic';
+  src: url('fonts/lato-italic-webfont.woff2') format('woff2'),
+       url('fonts/lato-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoregular';
+  src: url('fonts/lato-regular-webfont.woff2') format('woff2'),
+       url('fonts/lato-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-bg: #FCF0F0;
+  --color-bg-nav: #806D6D;
+  --headings: #FFA1A3;
+  --headings-dark: #D9898B;
+}
+
+html {
+  padding: 0;
+}
+
+html, body, ul, li {
+  margin: 0;
+}
+
+body {
+  background: var(--color-bg);
+  font-family: 'latoregular', sans-serif;
+  padding: 0 2rem 4rem;
+}
+
+nav {
+  top: 0;
+  position: sticky;
+}
+
+nav > label {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#trigger {
+  display: none;
+}
+
+#trigger:checked + ul {
+  display: block;
+}
+
+nav > ul {
+  display: none;
+  background: var(--color-bg-nav);
+  margin: 0 -2rem;
+}
+
+
+
+
+header, section {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 960px;
+  margin: 0 0 4rem 0;
+}
+
+h1, h2, h3 {
+  font-family: 'black_jackregular', serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p, li{
+  font-size: 1.15rem;
+  line-height: 1.8rem;
+}
