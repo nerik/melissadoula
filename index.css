@@ -48,6 +48,7 @@
 
 html {
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 html, body, ul, li {
@@ -58,17 +59,24 @@ body {
   background: var(--color-bg);
   font-family: 'latoregular', sans-serif;
   padding: 0 2rem 4rem;
-}
-
-nav {
-  top: 0;
-  position: sticky;
+  overflow-y: scroll;
 }
 
 nav > label {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  z-index: 1;
+}
+
+nav > ul {
+  top: 0;
+  display: none;
+  position: absolute;
+  background: var(--color-bg-nav);
+  margin: 0 -2rem;
+  width: 100vw;
+  height: 100vh;
 }
 
 #trigger {
@@ -79,20 +87,26 @@ nav > label {
   display: block;
 }
 
-nav > ul {
-  display: none;
-  background: var(--color-bg-nav);
-  margin: 0 -2rem;
+
+@media only screen and (min-width: 768px) {
+  nav > ul {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: auto;
+  }
+  nav > label {
+    display: none;
+  };
 }
 
 
 
-
 header, section {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 960px;
-  margin: 0 0 4rem 0;
+
+  max-width: 920px;
+  margin: 0 auto 4rem auto;
 }
 
 h1, h2, h3 {

@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melissa Doula Madrid</title>
     <link rel="stylesheet" href="index.css">
+
   </head>
 
   <body>
     <nav>
-      <label for="trigger">menu</label>
+      <label for="trigger">☰ menu</label>
       <input id="trigger" type="checkbox" />
       <ul>
         <li>
@@ -182,4 +183,11 @@
     </section>
   </body>
 
+  <script>
+    console.log(document.querySelector('#trigger'))
+    document.querySelector('nav > ul').addEventListener('click', () => {
+      console.log(document.querySelector('#trigger'))
+      document.querySelector('#trigger').checked = false
+    })
+  </script>
 </html>
