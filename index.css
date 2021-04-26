@@ -41,9 +41,14 @@
 
 :root {
   --color-bg: #FCF0F0;
+  --color-bg-alpha: #FCF0F0cc;
   --color-bg-nav: #806D6D;
   --headings: #FFA1A3;
   --headings-dark: #D9898B;
+  --font-size-xl: 4rem;
+  --font-size-l: 1.9rem;
+  --font-size-m: 1.5rem;
+  --font-size-s: 1.15rem;
 }
 
 html {
@@ -53,79 +58,117 @@ html {
 
 html, body, ul, li {
   margin: 0;
+  padding: 0
 }
 
 body {
   background: var(--color-bg);
+  background-image: url('./img/hero.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
   font-family: 'latoregular', sans-serif;
   padding: 0 2rem 4rem;
   overflow-y: scroll;
 }
 
-nav > label {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1;
+nav {
+  top: 0;
+  position: sticky;
+  margin: 0 -2rem;
+
 }
 
 nav > ul {
-  top: 0;
   display: none;
-  position: absolute;
+  list-style-type: none;
   background: var(--color-bg-nav);
-  margin: 0 -2rem;
   width: 100vw;
   height: 100vh;
 }
 
-#trigger {
-  display: none;
-}
-
-#trigger:checked + ul {
+nav > button {
+  position: absolute;
   display: block;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: none;
+  border: none;
 }
 
+nav li {
+  color: var(--color-bg);
+  padding: 1.5rem;
+  font-family: 'black_jackregular', serif;
+  font-size: var(--font-size-m);
+}
+
+nav li > a {
+  color: var(--color-bg);
+  text-decoration: none;
+}
 
 @media only screen and (min-width: 768px) {
+  nav {
+    position: sticky;
+  }
   nav > ul {
     display: flex;
-    position: sticky;
-    top: 0;
-    width: 100vw;
+    width: auto;
     height: auto;
   }
-  nav > label {
+  nav > button {
     display: none;
-  };
-}
+  }
 
+  nav > li {
+    padding: 1.5rem;
+  }
+
+  .separator {
+    flex-grow: 999;
+  }
+}
 
 
 header, section {
-
   max-width: 920px;
   margin: 0 auto 4rem auto;
+  padding: 0 3rem;
+}
+
+header p, header ul {
+  
+}
+h1 {
+  margin-top: 10vh;
+}
+
+.header-body {
+  margin-top: 20vh;
+  font-family: 'latoitalic';
+  background: var(--color-bg-alpha);
+  padding: 3rem
 }
 
 h1, h2, h3 {
   font-family: 'black_jackregular', serif;
+  color: var(--headings-dark);
 }
 
 h1 {
-  font-size: 2.6rem;
+  font-size: var(--font-size-xl);
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: var(--font-size-l);
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: var(--font-size-m);
 }
 
 p, li{
-  font-size: 1.15rem;
+  font-size: var(--font-size-s);
   line-height: 1.8rem;
 }
