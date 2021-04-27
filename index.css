@@ -215,12 +215,25 @@ p, li {
   line-height: 1.8rem;
 }
 
+a[name=qui] ~ p:first-of-type::before {
+  content: '';
+  display: block;
+  float: left;
+  background-image: url('./img/melissa.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 99px;
+  margin: 0 1rem 1rem 0;
+}
+
 .whatsapp, .facebook, .instagram {
   background-repeat: no-repeat;
   padding-left: 3rem;
-
 }
- 
+
 .whatsapp {
   background-image: url('./img/whatsapp.svg');
 }
