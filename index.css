@@ -39,16 +39,40 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'latolight';
+  src: url('fonts/lato-light-webfont.woff2') format('woff2'),
+       url('fonts/lato-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latolight_italic';
+  src: url('fonts/lato-lightitalic-webfont.woff2') format('woff2'),
+       url('fonts/lato-lightitalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
 :root {
+  --color-white: #Fff;
   --color-bg: #FCF0F0;
+  --color-bg-alternative: #e8dada;
   --color-bg-alpha: #FCF0F0cc;
-  --color-bg-nav: #806D6D;
+  --color-dark: #806D6D;
+  --color-text: #473D3D;
   --headings: #FFA1A3;
   --headings-dark: #D9898B;
-  --font-size-xl: 4rem;
   --font-size-l: 1.9rem;
   --font-size-m: 1.5rem;
   --font-size-s: 1.15rem;
+  --font-size-xs: 1rem;
 }
 
 html {
@@ -63,25 +87,22 @@ html, body, ul, li {
 
 body {
   background: var(--color-bg);
-  background-image: url('./img/hero.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  font-family: 'latoregular', sans-serif;
-  padding: 0 2rem 4rem;
+  font-family: 'latolight', sans-serif;
+  padding: 0 0 4rem;
   overflow-y: scroll;
+  color: var(--color-text)
 }
 
 nav {
   top: 0;
   position: sticky;
-  margin: 0 -2rem;
 
 }
 
 nav > ul {
   display: none;
   list-style-type: none;
-  background: var(--color-bg-nav);
+  background: var(--color-white);
   width: 100vw;
   height: 100vh;
 }
@@ -96,15 +117,29 @@ nav > button {
   border: none;
 }
 
+nav > button > span {
+  display: none;
+}
+
+nav > button::after {
+  content: '☰';
+  font-size: 1.7rem;
+}
+
+nav > button.opened::after {
+  content: '⨯';
+  font-size: 3rem;
+}
+
 nav li {
   color: var(--color-bg);
   padding: 1.5rem;
-  font-family: 'black_jackregular', serif;
-  font-size: var(--font-size-m);
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
 }
 
 nav li > a {
-  color: var(--color-bg);
+  color: var(--color-dark);
   text-decoration: none;
 }
 
@@ -116,13 +151,14 @@ nav li > a {
     display: flex;
     width: auto;
     height: auto;
+    box-shadow: 0 0 10px var(--color-dark)
   }
   nav > button {
     display: none;
   }
 
-  nav > li {
-    padding: 1.5rem;
+  nav li {
+    padding: 1.2rem;
   }
 
   .separator {
@@ -131,33 +167,39 @@ nav li > a {
 }
 
 
-header, section {
+section {
   max-width: 920px;
   margin: 0 auto 4rem auto;
   padding: 0 3rem;
 }
 
-header p, header ul {
-  
+section:nth-child(odd) {
+  background: var(--color-bg-alternative);
 }
+
+header {
+  width: 100%;
+  background-image: url('./img/hero.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'latolight_italic';
+}
+
+header > p {
+  font-size: var(--font-size-l);
+}
+
 h1 {
-  margin-top: 10vh;
+  margin: 10vh auto 0 auto;
+  background-image: url('./img/logo.svg');
+  background-repeat: no-repeat;
+  width: 195px;
+  height: 188px;
 }
 
-.header-body {
-  margin-top: 20vh;
-  font-family: 'latoitalic';
-  background: var(--color-bg-alpha);
-  padding: 3rem
-}
-
-h1, h2, h3 {
+h2, h3 {
   font-family: 'black_jackregular', serif;
   color: var(--headings-dark);
-}
-
-h1 {
-  font-size: var(--font-size-xl);
 }
 
 h2 {
@@ -168,7 +210,23 @@ h3 {
   font-size: var(--font-size-m);
 }
 
-p, li{
+p, li {
   font-size: var(--font-size-s);
   line-height: 1.8rem;
+}
+
+.whatsapp, .facebook, .instagram {
+  background-repeat: no-repeat;
+  padding-left: 3rem;
+
+}
+ 
+.whatsapp {
+  background-image: url('./img/whatsapp.svg');
+}
+.facebook {
+  background-image: url('./img/facebook.svg');
+}
+.instagram {
+  background-image: url('./img/instagram.svg');
 }

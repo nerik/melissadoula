@@ -12,16 +12,24 @@
 
   <body>
     <nav>
-      <button>☰ menu</button>
+      <button aria-label="Open main menu">
+        <span>Menu</span>
+      </button>
       <ul>
         <li>
-          <a href="#qui">Qui suis-je</a>
+          <a href="#qui">Qui suis-je?</a>
         </li>
         <li>
           <a href="#tarifs">Tarifs</a>
         </li>
         <li>
-          <a href="#themes">Thèmes abordés</a>
+          <a href="#themes">Thèmes</a>
+        </li>
+        <li>
+          <a href="#temoignages">Témoignages</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
         </li>
         <li class="separator"></li>
         <li>
@@ -35,12 +43,16 @@
 
 
     <header>
-      <h1>Mélissa Doula Madrid</h1>
+      
+      <h1 role="img" alt="Melissa Doula Madrid"></h1>
 
-      <div class="header-body">
-        <p>
-          On dit qu’il faut un village, laissez- moi faire partie du votre !
-        </p>
+      <p>
+        On dit qu’il faut un village, laissez- moi faire partie du votre !
+      </p>
+
+    </header>
+
+    <section>
 
         <h2>
           Qu’est-ce qu’une doula ?
@@ -61,6 +73,10 @@
           de celui-ci.
         </p>
 
+      </section>
+
+      <section>
+
         <p>
           Les bénéfices d’une doula en chiffres :
         <ul>
@@ -72,10 +88,10 @@
         </ul>
       </div>
 
-    </header>
+    </section>
 
-    <a name="qui" />
     <section>
+      <a name="qui"></a>
       <h2>Qui suis-je ?</h2>
       <p>Je m’appelle Melissa, je suis Française et j’habite actuellement dans les environs de Madrid en Espagne. Je parle
         Français, espagnol et anglais 🙂</p>
@@ -96,8 +112,8 @@
     </section>
 
 
-    <a name="tarifs" />
     <section>
+      <a name="tarifs"></a>
       <h2>Tarifs</h2>
       <p>Je me déplace à Madrid et ses environs.</p>
       <p>Première consultation gratuite !</p>
@@ -127,8 +143,8 @@
     </section>
 
 
-    <a name="themes" />
     <section>
+      <a name="themes"></a>
       <h2>Les différents Thèmes abordés</h2>
       <h3>Avant</h3>
       <ul>
@@ -150,7 +166,7 @@
       <li>le rôle du partenaire pendant l’accouchement</li>
       </ul>
 
-  </li>
+
       <h3>Pendant</h3>
       <ul>
       <li>Soutien physique et émotionnel pour la maman en travail</li>
@@ -163,7 +179,7 @@
       <li>Aide à instaurer un environnement sécuritaire et intimiste</li>
       <li>aide au maintien d'un environnement calme et chaleureux propice à la naissance</li>
       </ul>
-  </li>
+
       <h3>Après</h3>
       <ul>
       <li>Écoute active sur le vécu émotionnel de l'accouchement</li>
@@ -181,6 +197,29 @@
       </ul>
 
     </section>
+
+    <section>
+      <a name="temoignages"></a>
+      <h2>Témoignages</h2>
+      <p>
+        « Mélissa est super » Léna M., Madrid
+      </p>
+    </section>
+
+
+    <section>
+      <a name="contact"></a>
+      <h2>Contact</h2>
+      <p>
+        Blablabla
+
+      <ul>
+        <li class="whatsapp">1234567890</li>
+        <li class="instagram">melissa</li>
+        <li class="facebook">melissa</li>
+      </ul>
+      </p>
+    </section>
   </body>
 
   <script>
@@ -192,6 +231,7 @@
       button.addEventListener('click', () => {
         showMenu = !showMenu
         menu.style.display = showMenu ? 'block' : 'none'
+        button.classList.toggle('opened', showMenu)
       })
       menu.addEventListener('click', () => {
         showMenu = false
