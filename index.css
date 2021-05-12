@@ -94,8 +94,9 @@ body {
 
 nav {
   top: 0;
-  position: sticky;
+  position: fixed;
   z-index: 1;
+  width: 100%;
 }
 
 nav > ul {
@@ -146,29 +147,6 @@ nav li > a {
   text-decoration: none;
 }
 
-@media only screen and (min-width: 920px) {
-  nav {
-    position: sticky;
-  }
-  nav > ul {
-    display: flex;
-    width: auto;
-    height: auto;
-    box-shadow: 0 0 10px var(--color-dark)
-  }
-  nav > button {
-    display: none;
-  }
-
-  nav li {
-    padding-right: 1.5rem;
-    padding-bottom: 0;
-  }
-
-  .separator {
-    flex-grow: 999;
-  }
-}
 
 
 section {
@@ -177,17 +155,13 @@ section {
   padding-right: 2rem;
 }
 
-@media only screen and (min-width: 920px) {
-  section > * {
-    max-width: 920px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 section > a {
   display: block;
   height: 80px;
+}
+
+section:nth-child(odd) {
+  background: var(--color-bg);
 }
 
 section:nth-child(even) {
@@ -196,41 +170,44 @@ section:nth-child(even) {
 
 header {
   width: 100%;
-  min-height: 60vh;
+  min-height: 100vh;
   font-family: 'latolight_italic';
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 header::before {
   content: '';
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: red;
   background-image: url('./img/hero.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-}
-
-header > * {
-  z-index: 1;
+  opacity: 0.2;
 }
 
 header > p {
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 h1 {
-  /* margin: 10vh auto 0 auto; */
   background-image: url('./img/logo.svg');
   background-repeat: no-repeat;
-  width: 195px;
-  height: 188px;
+  width: 280px;
+  height: 268px;
+  filter: drop-shadow(0 0 10px var(--color-bg));
 }
 
 h2, h3 {
@@ -281,6 +258,23 @@ a[name=qui] ~ p:first-of-type::before {
   margin: 0 1rem 1rem 0;
 }
 
+a[name=benefices] ~ ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a[name=benefices] ~ ul > li {
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  margin-bottom: 1rem;
+}
+a[name=benefices] ~ ul > li > strong {
+  display: block;
+  font-size:  var(--font-size-m);
+}
+
 .whatsapp, .facebook, .instagram {
   background-repeat: no-repeat;
   padding-left: 3rem;
@@ -294,4 +288,54 @@ a[name=qui] ~ p:first-of-type::before {
 }
 .instagram {
   background-image: url('./img/instagram.svg');
+}
+
+
+@media only screen and (min-width: 920px) {
+  nav {
+    position: sticky;
+  }
+  nav > ul {
+    display: flex;
+    width: auto;
+    height: auto;
+    box-shadow: 0 0 10px var(--color-dark)
+  }
+  nav > button {
+    display: none;
+  }
+
+  nav li {
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+  }
+
+  .separator {
+    flex-grow: 999;
+  }
+
+  header {
+    min-height: 50vh;
+  }
+  
+  header::before {
+    height: 50vh;
+  }
+
+  header > p {
+    font-size: var(--font-size-l);
+  }
+
+  section > * {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a[name=benefices] ~ ul {
+    flex-wrap: nowrap;
+  }
+  
+  a[name=benefices] ~ ul > li {
+  }
 }

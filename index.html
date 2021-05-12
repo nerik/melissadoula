@@ -80,11 +80,11 @@
         <p>
           Les bénéfices d’une doula en chiffres :
         <ul>
-          <li>50% de césariennes</li>
-          <li>25% de temps de travail</li>
-          <li>60% de péridurales</li>
-          <li>30% d’analgésiques</li>
-          <li>40% de forceps.</li>
+          <li><strong>-50%</strong> de césariennes</li>
+          <li><strong>-25%</strong> de temps de travail</li>
+          <li><strong>-60%</strong> de péridurales</li>
+          <li><strong>-30%</strong> d’analgésiques</li>
+          <li><strong>-40%</strong> de forceps.</li>
         </ul>
       </div>
 
@@ -235,7 +235,9 @@
       })
       menu.addEventListener('click', () => {
         showMenu = false
+        console.log(showMenu)
         menu.style.display = 'none'
+        button.classList.toggle('opened', showMenu)
       })
 
     }
