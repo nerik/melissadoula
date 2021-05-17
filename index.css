@@ -84,6 +84,11 @@ html, body, ul, li, h1, h2, h3, h4, p {
   padding: 0
 }
 
+a {
+  text-decoration: none;
+  color: var(--headings-dark);
+}
+
 body {
   background: var(--color-bg);
   font-family: 'latolight', sans-serif;
@@ -144,7 +149,6 @@ nav li {
 
 nav li > a {
   color: var(--color-dark);
-  text-decoration: none;
 }
 
 
